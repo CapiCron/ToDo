@@ -10,55 +10,54 @@
 </head>
 <body>
     <div class="container-sm" style="width: width=100px;">
-    <form>
-        <fieldset>
-            <legend>Add a new Task!</legend>
-            <div class="row">
-                <div class="col">
-                    <div class="mb-3">
-                        <label for="TaskName" class="form-label">Task Name</label>
-                        <input type="text" id="TaskName" class="form-control">
+        <form>
+            <fieldset>
+                <legend>Add a new Task!</legend>
+                <div class="row">
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="TaskName" class="form-label">Task Name</label>
+                            <input type="text" id="TaskName" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="TaskUrgency" class="form-label">Urgency</label>
+                            <select id="TaskUrgency" class="form-select">
+                                <option>Low</option>
+                                <option>Medium</option>
+                                <option>High</option>
+                                <option>Critical</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="TaskDate" class="form-label">Task Date</label>
+                            <input type="text" id="TaskDate" class="form-control" placeholder="1999/01/01">
+                        </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="mb-3">
-                        <label for="TaskUrgency" class="form-label">Urgency</label>
-                        <select id="TaskUrgency" class="form-select">
-                            <option>Low</option>
-                            <option>Medium</option>
-                            <option>High</option>
-                            <option>Critical</option>
-                        </select>
+                <div class="row">
+                    <div class="col">
+                        <label for="TaskDescription" class="form-label">Description</label>
+                        <textarea class="form-control" id="TaskDescription" rows="3"></textarea>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="mb-3">
-                        <label for="TaskDate" class="form-label">Task Date</label>
-                        <input type="text" id="TaskDate" class="form-control" placeholder="1999/01/01">
+                <div class="row">
+                    <div class="col">
+                        <p></p>
+                        <button type="button" class="btn btn-primary" onclick="addItemToDB()">Add Task</button>
+                        <button type="button" class="btn btn-secondary" onclick="ShowDB()">Display Current Tasks</button>
+                        <button type="button" class="btn btn-secondary" onclick="dev()">runCheck</button>
+                        <button type="button" class="btn btn-danger" onclick="Drop()">Clear All Tasks</button>
+                        
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <label for="TaskDescription" class="form-label">Description</label>
-                    <textarea class="form-control" id="TaskDescription" rows="3"></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <p></p>
-                    <button type="button" class="btn btn-primary" onclick="addItemToDB()">Add Task</button>
-                    <button type="button" class="btn btn-secondary" onclick="ShowDB()">Display Current Tasks</button>
-                    <button type="button" class="btn btn-secondary" onclick="dev()">runCheck</button>
-                    <button type="button" class="btn btn-danger" onclick="Drop()">Clear All Tasks</button>
-                </div>
-            </div>
-        </fieldset>
-    </form>
-<p id="taskOutput">
-
-</p>
-
+            </fieldset>
+        </form>
+        <p id="taskOutput">
+        </p>
     </div>
 
 </body>
