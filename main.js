@@ -61,6 +61,7 @@ function ShowDB(){
         <th scope="col">Urgency</th>
         <th scope="col">Due Date</th>
         <th scope="col">Description</th>
+        <th scope="col">Actions</th>
       </tr>
     </thead>
     <tbody>`;
@@ -72,6 +73,7 @@ function ShowDB(){
         varTable += createCell(DB[i][0].taskUrgency)
         varTable += createCell(DB[i][0].taskDate)
         varTable += createCell(DB[i][0].taskDescription)
+        varTable += createCell('<button type="button" class="btn btn-danger" value=' + i + ' id='+ i + ' onclick="RemoveItem(' + i + ')">X</button>')
     }
 
     document.getElementById("taskOutput").innerHTML = varTable;
@@ -97,5 +99,9 @@ function Drop(){
     ShowDB();
 }
 
-
-
+function RemoveItem(index){
+    console.log("index is " + index)
+    DB.splice(index,1)
+    localStorage.setItem("DB",JSON.stringify(DB))
+    ShowDB()
+}
